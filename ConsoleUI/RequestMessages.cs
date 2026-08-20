@@ -11,15 +11,15 @@ namespace ConsoleUI
         public static string GetOperation(string message)
         {
             string operation;
-            bool isStringValid;
+            bool isStringEmpty;
 
             do
             {
                 Console.Write(message);
                 operation = Console.ReadLine();
-                isStringValid = String.IsNullOrEmpty(operation);
+                isStringEmpty = String.IsNullOrEmpty(operation);
 
-            } while (isStringValid == false);
+            } while (isStringEmpty == true);
 
             return operation.ToLower();
         }

@@ -26,11 +26,9 @@ namespace ConsoleUI
         {
             double output = 0;
 
-            try
-            {
-                output = x / y;
-            }
-            catch (DivideByZeroException ex)
+            output = x / y;
+            
+            if (double.IsInfinity(output) == true)
             {
                 throw new DivideByZeroException("Cannot divide by zero");
             }
@@ -59,7 +57,14 @@ namespace ConsoleUI
                     return Multiply(x, y);
                     break;
                 case "divide":
-                    return Divide(x , y);
+                    try
+                    {
+                        return Divide(x, y);
+                    }
+                    catch(DivideByZeroException ex)
+                    {
+                        throw new DivideByZeroException(ex.Message);
+                    }
                     break;
                 default:
                     return 0;
