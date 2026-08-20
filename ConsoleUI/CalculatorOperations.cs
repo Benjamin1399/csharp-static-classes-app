@@ -44,5 +44,27 @@ namespace ConsoleUI
 
             return output;
         }
+
+        public static double PerformOperation(double x, double y, string operation)
+        {
+            switch (operation)
+            {
+                case "add":
+                    return Add(x, y);
+                    break;
+                case "subtract":
+                    return Subtract(x, y);
+                    break;
+                case "multiply":
+                    return Multiply(x, y);
+                    break;
+                case "divide":
+                    return Divide(x , y);
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
     }
 }

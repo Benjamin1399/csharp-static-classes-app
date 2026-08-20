@@ -10,7 +10,19 @@ namespace ConsoleUI
     {
         public static void WelcomeMessage(string message)
         {
-            Console.Write($"{message}");
+            Console.Write(message);
+        }
+
+        public static void DisplayResult(string message)
+        {
+            try
+            {
+                Console.Write(message);
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
