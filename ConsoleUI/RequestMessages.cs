@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI
 {
-    public static class UserMessages
+    public static class RequestMessages
     {
-        public static void WelcomeMessage(string message)
-        {
-            Console.Write($"{message}");
-        }
     }
 }
